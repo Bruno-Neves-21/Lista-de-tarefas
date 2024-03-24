@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Tarefas</title>
+    <style>
+            body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f8f8;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        #container {
+            max-width: 600px;
+            margin: 20px auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        #novaTarefa {
+            width: calc(100% - 70px);
+            padding: 8px;
+            font-size: 16px;
+            border-radius: 5px 0 0 5px;
+            border: 1px solid #ccc;
+        }
+
+        #botaoAdicionar {
+            padding: 8px 12px;
+            font-size: 16px;
+            border: none;
+            border-radius: 0 5px 5px 0;
+            background-color: #4CAF50;
+            color: white;
+            cursor: pointer;
+        }
+
+        #listaTarefas {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        #listaTarefas li {
+            padding: 10px;
+            margin-bottom: 5px;
+            background-color: #f9f9f9;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        #listaTarefas li:hover {
+            background-color: #eaeaea;
+        }
+
+        #listaTarefas li button {
+            padding: 6px 10px;
+            font-size: 14px;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+
+        .tarefa-concluida {
+            text-decoration: line-through;
+            opacity: 0.5;
+        }
+
+        .editar {
+            display: none;
+            width: calc(100% - 26px);
+            margin: 5px 0;
+            padding: 5px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+        }
+
+        .editar:focus {
+            outline: none;
+            border-color: #4CAF50;
+        }
+
+        #feedback {
+            text-align: center;
+            padding: 10px;
+            margin-bottom: 10px;
+        }
+
+        .feedback-sucesso {
+            background-color: #4CAF50;
+            color: white;
+        }
+
+        .feedback-erro {
+            background-color: #f44336;
+            color: white;
+        }
+
+    </style>
+</head>
+<body onload="inicializar()">
+    <div id="feedback"></div>
+
+    <div id="container">
+        <h1>Lista de Tarefas</h1>
+
+        <div>
+            <input id="novaTarefa" type="text" placeholder="Nova tarefa">
+            <button id="botaoAdicionar">Adicionar</button>
+        </div>
+
+        <ul id="listaTarefas"></ul>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
